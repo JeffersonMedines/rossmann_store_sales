@@ -6,6 +6,8 @@
 
 <h1> índice </h1>
 
+<h3>
+
 • [Problemas de Negócio](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-problemas-de-neg%C3%B3cio-)
 
 • [Premissas do Negócio](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-premissas-do-neg%C3%B3cio-)
@@ -19,6 +21,8 @@
 • [Deploy do Modelo com o Bot do Telegram](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-deploy-do-modelo-com-o-bot-do-telegram-)
 
 • [Próximo Ciclo](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-pr%C3%B3ximo-ciclo-)
+ 
+ </h3>
 
 <h1> Problemas de Negócio </h1>
 
