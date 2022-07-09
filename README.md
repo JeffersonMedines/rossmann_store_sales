@@ -4,7 +4,7 @@
 
 
 
-<h1> índice </h1>
+<h1> Índice </h1>
 
 <h3>
 
@@ -47,7 +47,7 @@
 
 <p> 00. Entendendo o Problema de Negócio: Nessa etapa buscamos entender a causa raiz do problema, de onde ele surgiu e qual a dor que esse problema gera. Compreender o problema de forma profunda evita o desenvolvimento de uma solução que não solucione o problema por conta de um telefone sem fio entre a pessoa que sente a dor desse problema, e o cientista de dados que irá desenvolver a solução para esse problema. </p>
 
-<p> 01. Descrição dos Dados*: Aqui é utilizado estatística descritiva para compreender as características dos dados que serão trabalhados e realizar algumas limpezas como renomear colunas e identificar/preencher NA's. </p>
+<p> 01. Descrição dos Dados: Aqui é utilizado estatística descritiva para compreender as características dos dados que serão trabalhados e realizar algumas limpezas como renomear colunas e identificar/preencher NA's. </p>
 
 <p> 02. Feature Engineering: Nessa parte eu criei um mindmap sobre o fenômeno que estou modelando (venda diária das lojas) para entender melhor o funcionamento do modelo de negócio para criar hipóteses. Aqui após criar a lista de hipóteses também criamos novas variáveis ou transformamos as já existentes que serão necessárias para validar essas hipóteses. </p>
 
