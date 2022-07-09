@@ -6,19 +6,19 @@
 
 <h1> índice </h1>
 
-• [Problemas de Negócio]()
+• [Problemas de Negócio](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-problemas-de-neg%C3%B3cio-)
 
-• [Premissas do Negócio]()
+• [Premissas do Negócio](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-premissas-do-neg%C3%B3cio-)
 
-• [Planejamento da Solução]()
+• [Planejamento da Solução](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-planejamento-da-solu%C3%A7%C3%A3o-)
 
-• [Machine Learning e Métricas de Performance]()
+• [Machine Learning e Métricas de Performance](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-machine-learning-e-m%C3%A9tricas-de-performance-)
 
-• [Resultados Financeiros para o Negócio]()
+• [Resultados Financeiros para o Negócio](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-resultados-financeiros-para-o-neg%C3%B3cio-)
 
-• [Deploy do Modelo com o Bot do Telegram]()
+• [Deploy do Modelo com o Bot do Telegram](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-deploy-do-modelo-com-o-bot-do-telegram-)
 
-• [Próximo Ciclo]()
+• [Próximo Ciclo](https://github.com/JeffersonMedines/rossmann_store_sales/blob/main/README.md#-pr%C3%B3ximo-ciclo-)
 
 <h1> Problemas de Negócio </h1>
 
