@@ -1,6 +1,8 @@
+![ROSSSS](https://user-images.githubusercontent.com/93053350/178328890-115e092c-d9de-44fa-9fa1-f17992a5c9d7.png)
 
 
 
+# Previsão de Vendas das Lojas Rossmann
 
 
 
@@ -146,7 +148,7 @@ https://user-images.githubusercontent.com/93053350/178326451-6bd2cbc9-02d8-446e-
 
 <h1> Próximo Ciclo </h1>
 
-<p> Implementar técnicas mais aprofundadas de feature engineering e feature selection para melhorar significativamente o desempenho do modelo. </p>
+<p> Implementar técnicas mais aprofundadas de feature engineering e feature selection para melhorar 10% o desempenho do modelo. </p>
 
 <p> Durante a análise de resíduos foi identificado que os maiores erros se encontram entre as previsões de R$5.000 a R$10.000. Investigar a causa e implementar uma solução. </p>
 
