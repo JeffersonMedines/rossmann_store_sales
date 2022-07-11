@@ -74,10 +74,24 @@
 
 <p> Por isso, primeiro foi aplicado um modelo baseline (o modelos mais simples possível para usar como base de desempenho) que foi a média. Após isso, dois algoritmos simples de regressão linear (regressão normal e de Lasso) foram aplicados para comparar com o modelo baseline e compreender o nível de complexidade do fenômeno modelado (venda diária das lojas). Analisando o desempenho dos 3 modelos, o modelo baseline mostra um desempenho muito superior aos modelos de regressão linear nos indicando que esse fenômeno é complexo e necessita de algoritmos mais robustos. </p>
 
-<p> Então, foram aplicados dois algoritmos mais robustos, a Random Forest Regressor e o XGBoost Regressor. A performance dos dois algoritmos foram bem próximas e muito melhor do que os 3 primeiros modelos aplicados. Enquanto que a Random Forest apresentou um erro médio menor que o XGBoost, o XGBoost apresentou menor variância. A escolha do algoritmo foi definida então pelo custo de produção sendo escolhido o XGBoost, já que o modelo Random Forest normalmente exige muito mais memória da cloud para ser colocado em produção tendo um custo muito maior que o modelo XGBoost, logo, essa pequena queda na performance é muito compensado por um custo de produção muito menor.
- </p>
+| Model Name  |  MAE  |  MAPE  |  RMSE  |
+| ------------------- | ------------------- | ------------------- | ------------------- |
+|  Average Model |  1354.80 |  0.2064 |  1835.13 |
+|  Linear Regression |  2083.17 +/- 294.98	 |  0.3 +/- 0.02 |  2958.87 +/- 466.72 |
+|  Linear Regression - Lasso |  2117.66 +/- 340.94 |  0.29 +/- 0.01 |  3061.89 +/- 503.23 |
+
+<p> Então, foram aplicados dois algoritmos mais robustos, a Random Forest Regressor e o XGBoost Regressor. A performance dos dois algoritmos foram bem próximas e muito melhor do que os 3 primeiros modelos aplicados. Enquanto que a Random Forest apresentou um erro médio menor que o XGBoost, o XGBoost apresentou menor variância. A escolha do algoritmo foi definida então pelo custo de produção sendo escolhido o XGBoost, já que o modelo Random Forest normalmente exige muito mais memória da cloud para ser colocado em produção tendo um custo muito maior que o modelo XGBoost, logo, essa pequena queda na performance é muito compensado por um custo de produção muito menor. </p>
+
+| Model Name  |  MAE  |  MAPE  |  RMSE  |
+| ------------------- | ------------------- | ------------------- | ------------------- |
+|  Random Forest |  837.7 +/- 219.24 |  0.12 +/- 0.02 |  1256.59 +/- 320.28 |
+|  XGBoost Regressor |  913.11 +/- 161.5	 |  0.13 +/- 0.02 |  1306.38 +/- 236.62 |
 
 <p> Após a etapa de ajuste dos hiperparâmetros, o modelo XGBoost apresentou uma melhora no seu desempenho: </p>
+
+| Model Name  |  MAE  |  MAPE  |  RMSE  |
+| ------------------- | ------------------- | ------------------- | ------------------- |
+|  XGBoost Regressor Tuned |  710.82 |  0.1031 |  1018.85 |
 
 <p> Ao analisar as métricas de desempenho do modelo, podemos perceber:
 
@@ -92,9 +106,31 @@
 
 <p> Na tabela abaixo podemos ver qual será o valor total de vendas predito pelo modelo de todas as lojas, e quais os possíveis valores de um melhor e pior cenário. O melhor cenário foi calculado somando o valor total predito com o valor total MAE de todas as lojas, e o pior cenário possível subtraindo o valor toal MAE de todas as lojas: </p>
 
+| Scenarios  |  Values  |
+| ------------------- | ------------------- |
+|  predictions |  R$ 283,744,256.00 |
+|  worst_scenario |  R$ 282,948,122.76 |
+|  best_scenario |  R$ 284,540,394.96 |
+
 <p> O gráfico a seguir mostra qual foram os valores reais das vendas e quais foram os valores preditos pelo modelo: </p>
 
+![image](https://user-images.githubusercontent.com/93053350/178326406-0878b201-37bc-4c2d-9ab3-da82eb849237.png)
+
+
 <p> Essas sãos as 10 lojas que apresentam os maiores valores de MAPE e por isso devem ter uma análise específica para se decidir o budget de investimento para as reformas: </p>
+
+store  |  predictions  |  worst_scenario  |  best_scenario  |  MAE  |  MAPE
+| ------------------- | ------------------- | ------------------- | ------------------- | ------------------- | ------------------- 
+292  |  R$ 105597.61  |  R$ 102300.05  |  R$ 108895.18  |  3297.56  |  0.550666
+909  |  R$ 234382.89  |  R$ 226688.75  |  R$ 242077.03  |  7694.13  |  0.519254
+876  |  R$ 190734.37  |  R$ 186527.82  |  R$ 194940.92  |  4206.55  |  0.316381
+183  |  R$ 210616.85  |  R$ 209000.06  |  R$ 212233.65  |  1616.79  |  0.276576
+274  |  R$ 190166.06  |  R$ 188649.11  |  R$ 191683.01  |  1516.95  |  0.260754
+1039  |  R$ 352841.84  |  R$ 350882.09  |  R$ 354801.59  |  1959.74  |  0.258197
+286  |  R$ 159969.48  |  R$ 159260.94  |  R$ 160678.02  |  708.54  |  0.217607
+931  |  R$ 159882.18  |  R$ 158915.45  |  R$ 160848.92  |  966.73  |  0.206191
+534  |  R$ 297989.31  |  R$ 296702.56  |  R$ 299276.05  |  1286.74  |  0.205161
+550  |  R$ 222975.89  |  R$ 221989.05  |  R$ 223962.72  |  986.83  |  0.202784
 
 <h1> Deploy do Modelo com o Bot do Telegram </h1>
 
@@ -102,8 +138,17 @@
 
 <p> Para ter a previsão de uma loja específica é necessário passar o número de ID dessa loja com uma barra antes indicando o comando para o bot, após isso o bot irá retornar qual é o valor total previsto que essa loja irá vender nas próximas 6 semanas. O bot também irá indicar caso o ID da loja não esteja disponível para realizar previsões, ou caso o ID tenha sido digitado no formato errado. </p>
 
+
+
+https://user-images.githubusercontent.com/93053350/178326451-6bd2cbc9-02d8-446e-94d0-b046dea45b0a.mp4
+
+
+
 <h1> Próximo Ciclo </h1>
 
-<p> Implementar técnicas mais aprofundadas de feature engineering e feature selection para melhorar significativamente o desenpenho do modelo. </p>
+<p> Implementar técnicas mais aprofundadas de feature engineering e feature selection para melhorar significativamente o desempenho do modelo. </p>
 
 <p> Durante a análise de resíduos foi identificado que os maiores erros se encontram entre as previsões de R$5.000 a R$10.000. Investigar a causa e implementar uma solução. </p>
+
+![image](https://user-images.githubusercontent.com/93053350/178326367-bfc89db3-dfef-4e82-af48-29740bbb1f5a.png)
+
